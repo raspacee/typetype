@@ -25,12 +25,12 @@ export default {
   data() {
     return {
       paragraph: '',
-      sentence_count: 4,
+      paragraph_count: 1,
     }
   },
   methods: {
     async fetchParagraph() {
-      const response = await fetch(`http://metaphorpsum.com/sentences/${this.sentence_count}`);
+      const response = await fetch(`https://baconipsum.com/api/?type=meat-and-filler&paras=${this.paragraph_count}&format=text`);
       const data = await response.text();
       if (data) {
         this.paragraph = data;
